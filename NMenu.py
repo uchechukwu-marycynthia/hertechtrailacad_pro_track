@@ -12,15 +12,22 @@ def get_name():
 
 def menu():
     """
-    Tells user what kind of food to eat based on  time and region.
+    Tells user what kind of Local food to eat based on  time and region.
  
-    Extended description of function.
+    get_name function gets the users name, order_from function provides user 
+    with the link to order the food from and also order any food of their choice,menu function 
+    contains time function and get_location which gets the current time and also asks user to pick their region;
+    it also contain the menu_west,menu_east and menu_south which is a combination of dict and list and tuples.
  
     Parameters:
-    wrk_office_days (list): Days of the week the person needs to work from the office
-    wrk_home_days (list): Days of the week the person needs to work from home
-    weekends(list): Days of the week that are weekend days
-    nickname(str): nickname of the user
+    menu_west (list,tuple and dict): Different foods available in western region of Nigeria
+                                     in the morning, afternoon and evening
+    menu_east (list,tuple and dict): Different foods available in eastern regions of Nigeria
+                                     in the morning, afternoon and evening
+    menu_south (list,tuple and dict): Different foods available in southern region of Nigeria
+                                     in the morning, afternoon and evening
+    name(str): name of the user
+    Location(str):location of user
  
     Returns:
     location and food to eat and where to get it
