@@ -49,8 +49,10 @@ paye.rename(index={"AMINU Abosede":"Aminu Precious","Okoye Chioma":"Obidike Chio
 columns={"Tax_ID":"Tax_id","Basic_sal":"Gross_sal"},inplace=True)
 print(paye)
 #Change index position of a column
-Pa=paye.set_index("Tax_id")
+Pa=paye.set_index(["Tax_id"])
 print(Pa)
+new_order=[2,4,3,1,-1,0,5]
+print(paye[paye.columns[new_order]])
 #Delete rows
 paye.drop(index={"AZUBUIKE EBERE","ABAYOMI KUJORE"},inplace=True)
 print(paye)
