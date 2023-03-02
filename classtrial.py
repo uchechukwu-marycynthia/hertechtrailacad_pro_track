@@ -69,11 +69,11 @@ def my_alarm(wrk_office_days, wrk_home_days, weekends):
     nickname = (input("What do your friends call you?: ")).lower()
 #while loop alone ensures codecontinues running until we are satisfied
     
-    if DOW in WFO:
+    if DOW in wrk_office_days:
         return("Hi {}! Get off from your bed and prepare for work, its {}".format(nickname, DOW))
-    elif DOW in WFH:
+    elif DOW in wrk_home_days:
         return("Hi {}! You get to work from home today, it's {}".format(nickname, DOW))
-    elif DOW in WKD:
+    elif DOW in weekends:
         return("Hi {}! Have some rest and get on with your social life, its {}".format(nickname, DOW))
     else:
         return("This is not a recognized day of the week")
