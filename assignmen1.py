@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 #dict of of list
 Paye =pd.DataFrame({
     "Designation":["GENERAL MANAGER","CLEANER","PRODUCTION SUPERVISOR","PROCUREMENT OFFICER","FINANCE MANAGER",
@@ -32,12 +33,13 @@ paye=pd.concat([Paye,Paye2])
 print(paye)  
 #loc cannot be used to add multiple rows but concat or Paye.append(Paye2) does a good job
 # add new columns
-print("\n adding using loc and bracket")
-paye.loc[:, ["Dev_levy"]]=[10,10,10,10,10,10,10,10,10,10,10]
+print("\n adding using bracket and np")
+paye["Dev_levy"]=np.full(len(paye),10)
 print(paye)
 #Note forthe above to work the len must correspond
 #new column with bracket
-paye["Nationality"]=["NIG","GHN","NIG","USA","CND","NIG","NGN","SNG","NGN","NIG","IRQ"]
+print("\n adding new column using loc")
+paye.loc[:, ["Nationality"]]=["NIG","GHN","NIG","USA","CND","NIG","NGN","SNG","NGN","NIG","IRQ"]
 print(paye)
 #adding new columns using insert
 print("\n inserts column in desired position")
@@ -47,7 +49,7 @@ print(paye)
 print("\nRename a row")
 paye.rename(index={"NWAIWU Emeka":"Emeka Hudson"},inplace=True)
 print(paye)
-print("\nRename multiple rows")
+print("\nRename multiple rows and column")
 
 paye.rename(index={"AMINU Abosede":"Aminu Precious","Okoye Chioma":"Obidike Chioma"},
 columns={"Tax_ID":"Tax_id","Basic_sal":"Gross_sal"},inplace=True)
