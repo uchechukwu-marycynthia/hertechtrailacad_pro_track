@@ -63,9 +63,11 @@ new_order=[2,4,3,1,-1,0,5]
 print(paye[paye.columns[new_order]])
 print("The order of arrangement is temporary too\n")
 #Delete rows
+print("\nDeleting of rows")
 paye.drop(index={"AZUBUIKE EBERE","ABAYOMI KUJORE"},inplace=True)
 print(paye)
-print("\nDeleting of rows")
 #Delete columns
+
+print("\ndelete columns")
 paye.drop(columns="Dev_levy",inplace=True)
 print(paye)
