@@ -43,3 +43,6 @@ print(Shop_list)
 #instead of typing the length you can useloength function or using any other method that will be dynamic
 Shop_list["Ebuka"]=np.full(len(Shop_list),1000)
 print(Shop_list)
+Shop_list["Total"]=Shop_list["Amara"]+Shop_list["Dorothy"]+Shop_list["Faridat"]+Shop_list["Nkechi"]
+print(Shop_list)
+#note you cant add a nuimber to a nan since its not a number per say

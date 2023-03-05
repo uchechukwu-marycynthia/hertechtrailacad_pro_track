@@ -34,7 +34,7 @@ print(paye)
 #loc cannot be used to add multiple rows but concat or Paye.append(Paye2) does a good job
 # add new columns
 print("\n adding using bracket and np")
-paye["Dev_levy"]=np.full(len(paye),10)
+paye["Dev_levy"]=np.full(paye.shape[0],10)
 print(paye)
 #Note forthe above to work the len must correspond
 #new column with bracket
