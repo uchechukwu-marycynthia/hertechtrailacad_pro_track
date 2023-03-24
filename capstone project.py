@@ -320,12 +320,15 @@ def user_stats(df, city, month, day):
 
 
 def plot(rows=3, cols=2, dashboard_size=(30,20)):
-
-
     #Create figure and subplots for the Dasboard
     #The code below is a sample dashboard config that can take 6 plots in a 3 rows by 2 columns arrangement
     #You are to expand this function to plot all your visuals at the end in one dashboard view. 
     fig, axs = plt.subplots(rows, cols, figsize=dashboard_size)
+    plt.plot()
+    plt.xlabel("")
+    plt.ylabel("")
+
+
 
 
 
