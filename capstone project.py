@@ -327,13 +327,25 @@ def plot(rows=3, cols=2, dashboard_size=(30,20)):
     #The code below is a sample dashboard config that can take 6 plots in a 3 rows by 2 columns arrangement
     #You are to expand this function to plot all your visuals at the end in one dashboard view. 
     fig, axs = plt.subplots(rows, cols, figsize=dashboard_size)
-    plt.plot()
-    plt.xlabel("")
-    plt.ylabel("")
+    #line graphs
+    #most common trip
+    plt.plot(df["id"].value_counts(),df["Trip"])
+    plt.title("Frequency of Trip")
+    plt.xlabel("id count")
+    plt.ylabel("Trip")
+    plt.show()
 
+    #frequency of service use
+    plt.plot(df["id"].value_counts(),df["usertype"])
+    plt.title("Frequency of service use")
+    plt.xlabel("id count")
+    plt.ylabel("Start Station")
+    plt.show()
 
+    #column Chart
+    #Avg trip duration for male and female
 
-
+    #gender(legend),agegroup(x-axis) and count of users(y-axis)
 
 
 
