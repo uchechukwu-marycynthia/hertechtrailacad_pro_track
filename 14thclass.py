@@ -14,17 +14,22 @@ df.drop(columns=["Remarks","Value. Date","Reference","Originating Branch"],axis=
 #Inthis data below we are going to drop all places that the transactional date
 #  is nan (our deduction since  its a bank ststement).recall the no of rows is 13... 
 # we definetly cant sscrollthrough toknow the row indexes
+
+#datatype and conversion to float
 print(df.dtypes)
 df["Debits"]=df["Debits"].str.replace(",","").astype(float)
 df["Credits"]=df["Credits"].str.replace(",","").astype(float)
 df["Balance"]=df["Balance"].str.replace(",","").astype(float)
+
 print("\nnull values Removed")
 nullrows=np.where(pd.isnull(df["Trans. Date"]))[0]
 #note without the last 0 it will throw us an error b/c of the list is inside a tuple but we just need a list
 df.drop(labels=nullrows,inplace=True)
+
 #Situations where you need your index to be arranged in ascending order after dropping some rows then index need to be reset
 df.reset_index(drop=True,inplace=True)
 df.fillna(value=0,inplace=True)
+
 #please ensure your type the below as seen keys not key
 #youcan add the number of columns
 print(tabulate(df.head(20),headers="keys",tablefmt="psql"))
