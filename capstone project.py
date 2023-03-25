@@ -344,10 +344,10 @@ def plot(rows=3, cols=2, dashboard_size=(30,20)):
 
     #column Chart
     #Avg trip duration for male and female
-    plt. subplots(np.avgdf["Trip Duration"],df["Gender"])
+    plt.subplots(np.average(df["Trip Duration"]),df["Gender"])
     plt.title("Frequency of Trip")
-    plt.xlabel("id count")
-    plt.ylabel("Trip")
+    plt.xlabel("Trip Durtion")
+    plt.ylabel("Gender")
     plt.show()
     #gender(legend),agegroup(x-axis) and count of users(y-axis)
 
